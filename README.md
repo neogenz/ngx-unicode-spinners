@@ -13,7 +13,10 @@
 ## Installation
 
 ```bash
+# npm
 npm install ngx-unicode-spinners
+# pnpm
+pnpm add ngx-unicode-spinners
 ```
 
 Requires Angular 21+.
