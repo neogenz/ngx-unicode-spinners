@@ -1,7 +1,7 @@
 # ngx-unicode-spinners
 
 [![npm version](https://img.shields.io/npm/v/ngx-unicode-spinners.svg)](https://www.npmjs.com/package/ngx-unicode-spinners)
-[![license](https://img.shields.io/npm/l/ngx-unicode-spinners.svg)](LICENSE)
+[![license](https://img.shields.io/github/license/neogenz/ngx-unicode-spinners.svg)](LICENSE)
 [![Angular](https://img.shields.io/badge/Angular-21%2B-red.svg)](https://angular.dev)
 
 18 braille-based Unicode spinner animations for Angular. Zero runtime dependencies.
