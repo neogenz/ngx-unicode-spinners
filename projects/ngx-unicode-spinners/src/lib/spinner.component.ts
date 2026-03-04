@@ -14,7 +14,6 @@ import { SPINNERS } from './spinner-data';
   selector: 'ngx-unicode-spinners',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'role': 'img',
     '[attr.aria-label]': 'ariaLabel() ?? null',
     '[attr.aria-hidden]': 'ariaLabel() ? null : "true"',
     '[style.color]': 'color() ?? null',
