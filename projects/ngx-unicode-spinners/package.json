@@ -1,0 +1,23 @@
+{
+  "name": "ngx-unicode-spinners",
+  "version": "1.0.0",
+  "description": "Angular 21+ component library for Unicode braille spinner animations",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "spinner",
+    "loading",
+    "braille",
+    "unicode",
+    "animation",
+    "accessibility"
+  ],
+  "peerDependencies": {
+    "@angular/core": "^21.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neogenz/ngx-unicode-spinners.git"
+  },
+  "sideEffects": false
+}
