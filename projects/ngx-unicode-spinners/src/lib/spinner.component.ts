@@ -28,7 +28,9 @@ import { SPINNERS } from './spinner-data';
     }
   `,
   styles: `
-    :host { white-space: nowrap; }
+    :host {
+      white-space: nowrap;
+    }
     .sr-only {
       position: absolute;
       width: 1px;
@@ -54,13 +56,11 @@ export class SpinnerComponent {
 
   private readonly spinnerData = computed(() => SPINNERS[this.name()]);
 
-  private readonly effectiveInterval = computed(() =>
-    this.interval() ?? this.spinnerData().interval
+  private readonly effectiveInterval = computed(
+    () => this.interval() ?? this.spinnerData().interval,
   );
 
-  protected readonly currentFrame = computed(() =>
-    this.spinnerData().frames[this.frameIndex()]
-  );
+  protected readonly currentFrame = computed(() => this.spinnerData().frames[this.frameIndex()]);
 
   constructor() {
     effect((onCleanup) => {
@@ -75,7 +75,7 @@ export class SpinnerComponent {
       if (!isPlaying) return;
 
       const id = setInterval(() => {
-        this.frameIndex.update(i => (i + 1) % frameCount);
+        this.frameIndex.update((i) => (i + 1) % frameCount);
       }, ms);
 
       onCleanup(() => clearInterval(id));

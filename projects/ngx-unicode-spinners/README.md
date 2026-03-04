@@ -17,7 +17,7 @@ import { SpinnerComponent } from 'ngx-unicode-spinners';
 
 @Component({
   imports: [SpinnerComponent],
-  template: `<neogenz-spinner name="braille" />`,
+  template: `<ngx-unicode-spinners name="braille" />`,
 })
 export class MyComponent {}
 ```
@@ -25,7 +25,7 @@ export class MyComponent {}
 ### Customization
 
 ```html
-<neogenz-spinner
+<ngx-unicode-spinners
   name="orbit"
   color="#3b82f6"
   fontSize="2rem"
@@ -36,10 +36,10 @@ export class MyComponent {}
 
 ## API
 
-### `<neogenz-spinner>` Component
+### `<ngx-unicode-spinners>` Component
 
 | Input       | Type          | Default         | Description                    |
-|-------------|---------------|-----------------|--------------------------------|
+| ----------- | ------------- | --------------- | ------------------------------ |
 | `name`      | `SpinnerName` | **required**    | Which spinner animation to use |
 | `interval`  | `number`      | spinner default | Override animation speed (ms)  |
 | `color`     | `string`      | inherited       | CSS color                      |
@@ -70,7 +70,7 @@ import { SPINNERS, SPINNER_NAMES, makeGrid, gridToBraille } from 'ngx-unicode-sp
 ## Available Spinners
 
 | Name           | Chars | Interval |
-|----------------|-------|----------|
+| -------------- | ----- | -------- |
 | `braille`      | 1     | 80ms     |
 | `braillewave`  | 4     | 100ms    |
 | `dna`          | 4     | 80ms     |

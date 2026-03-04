@@ -41,7 +41,7 @@ describe('UnicodeSpinnersService', () => {
     const grid = service.makeGrid(4, 6);
     expect(grid.length).toBe(4);
     expect(grid[0].length).toBe(6);
-    expect(grid.every(row => row.every(cell => cell === false))).toBe(true);
+    expect(grid.every((row) => row.every((cell) => cell === false))).toBe(true);
   });
 
   it('should return empty array for invalid grid dimensions', () => {

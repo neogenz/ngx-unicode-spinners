@@ -1,0 +1,9 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "projects/**/*.ts"
+      run: pnpm eslint {staged_files}
+    prettier:
+      glob: "projects/**/*.{ts,html,css,json,md}"
+      run: pnpm prettier --check {staged_files}

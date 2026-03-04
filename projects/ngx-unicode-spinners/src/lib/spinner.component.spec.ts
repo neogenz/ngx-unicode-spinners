@@ -48,7 +48,8 @@ describe('SpinnerComponent', () => {
   });
 
   function getFrameText(): string {
-    return fixture.nativeElement.querySelector('ngx-unicode-spinners span[aria-hidden]').textContent;
+    return fixture.nativeElement.querySelector('ngx-unicode-spinners span[aria-hidden]')
+      .textContent;
   }
 
   function getSpinnerEl(): HTMLElement {
@@ -159,7 +160,9 @@ describe('SpinnerComponent', () => {
 
     vi.advanceTimersByTime(braille.interval * 5);
     f.detectChanges();
-    const frameText = f.nativeElement.querySelector('ngx-unicode-spinners span[aria-hidden]').textContent;
+    const frameText = f.nativeElement.querySelector(
+      'ngx-unicode-spinners span[aria-hidden]',
+    ).textContent;
     expect(frameText).toBe(braille.frames[0]);
     f.destroy();
   });
