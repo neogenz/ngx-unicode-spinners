@@ -6,6 +6,8 @@
 
 18 braille-based Unicode spinner animations for Angular. Zero runtime dependencies.
 
+[**Live Demo**](https://neogenz.github.io/ngx-unicode-spinners/)
+
 ```html
 <ngx-unicode-spinners name="braille" />
 ```
@@ -104,6 +106,38 @@ export class MyService {
     const frame = this.spinners.gridToBraille(grid);
   }
 }
+```
+
+## Recipes
+
+### Loading button
+
+```html
+<button [disabled]="loading">
+  @if (loading) {
+    <ngx-unicode-spinners name="orbit" fontSize="0.9em" ariaLabel="Saving..." />
+  }
+  {{ loading ? 'Saving...' : 'Save' }}
+</button>
+```
+
+### Conditional display
+
+```html
+@if (isLoading) {
+  <ngx-unicode-spinners name="scan" ariaLabel="Loading data" />
+} @else {
+  <app-content [data]="data" />
+}
+```
+
+### Inline status indicator
+
+```html
+<span class="status">
+  <ngx-unicode-spinners name="braille" fontSize="1em" color="currentColor" />
+  Syncing...
+</span>
 ```
 
 ## Development
