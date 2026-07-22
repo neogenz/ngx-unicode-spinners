@@ -31,7 +31,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       - run: pnpm test
-      - run: pnpm exec ng build ngx-unicode-spinners
+      - run: pnpm build
       - run: cp LICENSE dist/ngx-unicode-spinners/
 
       # Trusted publishing requires npm >= 11.5.1

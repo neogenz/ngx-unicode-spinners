@@ -4,16 +4,24 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
+pnpm, not npm — the lockfile is `pnpm-lock.yaml`.
+
 ```bash
-npm start        # Serve demo app at http://localhost:4200
-npm run build    # Build library (dist/ngx-unicode-spinners/) + demo
-npm run watch    # Build in watch mode
-npm test         # Run tests with Vitest
+pnpm start        # Serve demo app at http://localhost:4200
+pnpm build        # Build library → dist/ngx-unicode-spinners/
+pnpm build:demo   # Build demo app → dist/demo/
+pnpm watch        # Build library in watch mode
+pnpm test         # Run tests with Vitest
+pnpm lint
+pnpm format:check
 ```
+
+`ng build` alone fails: both projects declare a build target, so the CLI cannot
+pick one. Every build script names its project explicitly.
 
 To run a single test file:
 ```bash
-npx ng test --include="**/spinner.component.spec.ts"
+pnpm ng test --include="**/spinner.component.spec.ts"
 ```
 
 ## Releasing
