@@ -1,6 +1,6 @@
 # ngx-unicode-spinners
 
-Angular 21+ component library for animated Unicode braille spinner loading indicators. Zero dependencies. 18 unique animations.
+Angular 22+ component library for animated Unicode braille spinner loading indicators. Zero dependencies. 18 unique animations.
 
 Ported from [unicode-animations](https://github.com/gunnargray-dev/unicode-animations).
 
