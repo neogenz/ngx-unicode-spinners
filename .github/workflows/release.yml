@@ -1,0 +1,42 @@
+name: publish
+
+# Ship a version: bump projects/ngx-unicode-spinners/package.json, then push a tag.
+#   git tag vX.Y.Z && git push --follow-tags
+# Publishes to npm via Trusted Publishing (OIDC) — no token to store.
+# One-time: add this repo + workflow as a Trusted Publisher on the npm package
+# (npmjs.com -> ngx-unicode-spinners -> Settings -> Trusted Publisher).
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  id-token: write # OIDC token for npm trusted publishing + provenance
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          registry-url: "https://registry.npmjs.org"
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm test
+      - run: pnpm exec ng build ngx-unicode-spinners
+      - run: cp LICENSE dist/ngx-unicode-spinners/
+
+      # Trusted publishing requires npm >= 11.5.1
+      - run: npm install -g npm@latest
+
+      # No NODE_AUTH_TOKEN: OIDC handles auth, provenance is attached automatically.
+      - run: npm publish
+        working-directory: dist/ngx-unicode-spinners
