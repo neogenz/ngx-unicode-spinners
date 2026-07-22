@@ -18,7 +18,7 @@ npx ng test --include="**/spinner.component.spec.ts"
 
 ## Architecture
 
-Angular 21 monorepo with two projects:
+Angular 22 monorepo with two projects:
 
 - **`projects/ngx-unicode-spinners/`** — publishable library (zero runtime deps)
 - **`projects/demo/`** — demo app consuming the library via path alias `ngx-unicode-spinners → dist/ngx-unicode-spinners`

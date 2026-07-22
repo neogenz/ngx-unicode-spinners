@@ -21,7 +21,7 @@ npm install ngx-unicode-spinners
 pnpm add ngx-unicode-spinners
 ```
 
-Requires Angular 21+.
+Requires Angular 22+.
 
 ## Usage
 
