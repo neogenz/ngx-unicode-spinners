@@ -16,6 +16,27 @@ To run a single test file:
 npx ng test --include="**/spinner.component.spec.ts"
 ```
 
+## Releasing
+
+Bump `version` in `projects/ngx-unicode-spinners/package.json`, commit, then:
+
+```bash
+git tag vX.Y.Z && git push --follow-tags
+```
+
+Pushing a `v*` tag runs `.github/workflows/release.yml`, which tests, builds, and
+publishes `ngx-unicode-spinners` to npm via Trusted Publishing (OIDC) — no token,
+no OTP, provenance attached. GitHub mints a short-lived identity token that npm
+trusts because `neogenz/ngx-unicode-spinners` + `release.yml` are registered as a
+Trusted Publisher on the package.
+
+**Never `npm publish` from a laptop** — the account has 2FA on writes, so it fails
+with `EOTP` and would produce an unsigned artifact.
+
+The run uses the workflow file from the *tagged* commit. If a tag predates a
+workflow change, move it (`git tag -f vX.Y.Z && git push -f origin vX.Y.Z`) —
+safe only while that version has never been published.
+
 ## Architecture
 
 Angular 22 monorepo with two projects:
